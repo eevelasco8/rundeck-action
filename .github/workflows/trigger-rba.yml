@@ -1,0 +1,26 @@
+name: Execute RBA Job
+
+on:
+  push:
+    branches: [ "main" ]
+    
+  workflow_dispatch:
+
+
+jobs:
+  run_job:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run job in RBA
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-Rundeck-Auth-Token: ZDBXnyaiQPIpPINNHpkr3lMFQmNAYeKO" \
+            https://rdse.runbook.pagerduty.cloud/api/14/job/436e2b8e-4eab-4e9d-9469-427a75233439/run
