@@ -24,4 +24,4 @@ jobs:
           curl -X POST \
             -H "Content-Type: application/json" \
             -H "X-Rundeck-Auth-Token: ${{ secrets.RBA_API_TOKEN }}" \
-            https://rdse.runbook.pagerduty.cloud/api/14/job/436e2b8e-4eab-4e9d-9469-427a75233439/run
+            https://rdse.runbook.pagerduty.cloud/api/14/job/bffefb69-5057-42b1-b037-f37f12c8eb0f/run
